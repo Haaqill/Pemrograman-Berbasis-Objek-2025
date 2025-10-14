@@ -16,8 +16,6 @@ public class VendingMachine
         int choice;
         int confirm;
         int uang;
-        String transaksi;
-        FileWriter log = new FileWriter("log.txt", true);
         Scanner scanner = new Scanner(System.in);
         while (!finished){
             inventory.showItem();
@@ -40,8 +38,6 @@ public class VendingMachine
                         if(uang >= pilihan.getHarga()){
                             System.out.println("Pembayaran Berhasil!");
                             pilihan.kurangi();
-                            transaksi = "Item: " + pilihan.getNama();
-                            log.write(transaksi);
                         }
                         else {
                             System.out.println("Pembayaran gagal! uang dikembalikan");
